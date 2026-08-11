@@ -1,0 +1,12 @@
+📋 Prerequisites
+- [AWS free account or subscription](https://aws.amazon.com/free/)
+- AWS Fundamentals
+- OSI model and protocols - SSH, HTTP, HTTPS, TCP,UDP, SMTP, etc
+- Visual Studio Code or preferred IDE installed
+- Git installed and working knowledge of Git and Github
+- Linux or Mac or WSL(Windows Subsystem for Linux)
+- Linux and Shell scripting
+- Basic understanding of YAML and JSON
+- [Deployment Strategies](https://youtu.be/uj0qDN1EWus)
+- [Networking Fundamentals](https://youtu.be/yUhzvVrwkV8)
+- [IP Addressing](https://youtu.be/G1azmL5-eQI)
