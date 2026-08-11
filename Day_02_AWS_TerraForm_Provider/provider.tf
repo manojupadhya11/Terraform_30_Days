@@ -1,10 +1,14 @@
 terraform {
+    #Provider manager Cloud Service Provider example AWS, Azure
   required_providers {
     aws = {
         source = "hashicorp/aws"
         version = "~> 4.0"
     }
   }
+  
+  #Terraform Version required to run this configuration
+  required_version = ">= 1.15.0"
 }
 
 provider "aws" {
