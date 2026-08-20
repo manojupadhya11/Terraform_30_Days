@@ -9,13 +9,10 @@ terraform{
 }
 
 provider "aws" {
-  region = tolist(var.region)[0]
+  #region = tolist(var.region)[0]
+  #Region using dictionary varianble
+  region = var.config.region
 }
-
-
-
-
-
 
 resource "aws_instance" "manu_ec2" {
     ami                         = "ami-035827357e3c7e810"

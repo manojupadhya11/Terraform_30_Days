@@ -53,15 +53,17 @@ variable "Tags" {
 }
 
 #dict variable type is used to create a collection of key-value pairs. It allows you to define a set of named values that can be accessed using their corresponding keys.
-variable "Tags_dict" {
+variable "config" {
   description = "The AWS tags for the environement"
-  type        = object({
-    Environment = string
-    Owner       = string
+  type = object({
+    region = string
+    monitoring = bool
+    instance_count = number
   })
-  default     = {
-    Environment = "development"
-    Owner       = "Manu"
+  default = {
+    region = "us-east-1"
+    monitoring = true
+    instance_count = 2
   }
 }
 
