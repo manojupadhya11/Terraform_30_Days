@@ -9,28 +9,21 @@ terraform{
 }
 
 provider "aws" {
-  region = tolist(var.region[0])
+  region = tolist(var.region)[0]
 }
 
 
 
-variable "Tags_Environment" {
-  description = "The AWS tags for the environement"
-  type        = string
-  default     = "development"
-}
+
 
 
 resource "aws_instance" "manu_ec2" {
     ami                         = "ami-035827357e3c7e810"
     instance_type               = var.instance_type_pool[0]
     count                       = var.instance_count
-    associate_public_ip_address  = var.allow
-    monitoring                   = var.allow
-    tags = {
-      environment = var.Tags_Environment
-      Name = "Dev-EC2"
-    }
+    associate_public_ip_address = var.allow
+    monitoring                  = var.allow
+    tags                         = var.Tags
 }
 
 resource "aws_security_group" "manu_sg" {
@@ -38,9 +31,9 @@ resource "aws_security_group" "manu_sg" {
     description = "Allow SSH and HTTP inbound traffic"
     
     ingress {
-        from_port   = 22
-        to_port     = 22
-        protocol    = "tcp"
+        from_port   = var.ingress_values[0]
+        to_port     = var.ingress_values[2]
+        protocol    = var.ingress_values[1]
         cidr_blocks = [var.cidr_block[0]]
     }
 
@@ -62,4 +55,8 @@ resource "aws_security_group" "manu_sg" {
 
 output "public_ips"{
   value = aws_instance.manu_ec2.*.public_ip
+}
+
+output "region"{
+  value = aws_instance.manu_ec2.*.availability_zone
 }
