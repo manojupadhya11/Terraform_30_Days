@@ -27,6 +27,7 @@ resource "aws_s3_bucket" "terraform_state"{
     tags = {
         name = "Terraform State Bucket"
         env = "Dev"
+        key = "terraform" 
     }
 }
 
