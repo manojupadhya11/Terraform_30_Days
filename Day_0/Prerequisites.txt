@@ -10,3 +10,4 @@
 - [Deployment Strategies](https://youtu.be/uj0qDN1EWus)
 - [Networking Fundamentals](https://youtu.be/yUhzvVrwkV8)
 - [IP Addressing](https://youtu.be/G1azmL5-eQI)
+- Networking fundementals
